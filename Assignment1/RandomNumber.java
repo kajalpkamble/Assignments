@@ -4,11 +4,13 @@ class RandomNumber
 {
 	public static void main(String args[])
 	{
+
 	    Scanner sc = new Scanner(System.in);
 	    System.out.println("Enter size");
-        int i,n,flag=0,count=0;
+        int i,n,j,flag=0,count=0;
 	    n = sc.nextInt();
 	    int Random[] = new int[n];
+        //count = n/k;
 
         System.out.println("Enter Elements");
 
@@ -17,52 +19,32 @@ class RandomNumber
 	    	Random[i] = sc.nextInt();
 
 	    }
-	   
+	   // System.out.println("Repeated Elements");
+
 	    for(i =0; i<n; i++)
 	    {
         	    for(j =0; j<n; j++)
         	   {
+        	   	   if(i!=j)
+        	   	   {
                      if(Random[i]==Random[j])
                      {
-        	    	System.out.println(Random[i]);
+                       count++;
+
+        	    	       System.out.println("Repeated Elements: "+Random[i]);
+
 
                      }
                      else{flag=0;
         	        break;}
+        	      }
         	   }
-        	    if(flag==1)
-        	    {
-        	    	count++;
 
-        	    }
-      	    	*/
+
 	    }
+
 	     System.out.println("");
-	     System.out.println("count is of  5 : " +count);
-
-
-
-	    /*if((n/k)==count)
-	    {
-	       System.out.println(x[i]);
-
-	    }*/
-	    /*int x[] = {5,3,5,6,2,1};
-         
-       	int k = 3,i;
-	    System.out.println("Enter Elements in array");
-	    //take elements 
-	    for(i =0; i< x.lenth; i++)
-	    {
-	    	System.out.println(x[i]);
-
-	    }
-
-	    if(n/k)
-	    {
-           
-	    }*/
-
+	     System.out.println("count is of: " +count);
 
 	}
 }
