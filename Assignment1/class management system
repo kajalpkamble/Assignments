@@ -1,0 +1,112 @@
+class management system
+
+----------------------------------------------------------------------
+user_role
+                id                                  [pk]
+                user_name                           [varchar2(10)]
+----------------------------------------------------------------------
+user
+                id                                  [pk]
+                user_role_id                             [number]fk to user_role
+                address_id                          [number]
+                birth                               [datetime/timestamp]
+                email                               [varchar2(10)]
+                contact no                          [varchar2(10)]
+                gender                              [varchar2(10)]
+                education                           [varchar2(10)]
+                joining_date                        [datetime/timestamp]
+-----------------------------------------------------------------------
+batches
+       id
+       student_id                                      [student] fk to student
+       batch name                                      [varchar2(10)]
+
+course
+     id                                                 [pk]
+     course_name                                        [varchar2(10)]
+
+
+subjects
+         id                                             [pk]
+         subject name                                   [varchar2(10)]
+
+
+course_subject
+              id                                         [pk]
+              course_id                                  [number] fk to course
+
+              subject_id                                 [number] fk to subject
+
+class_timeslot
+              id                                        [pk]
+              course_subjects_id                        [number] fk to course_subjects
+              slot_time                                      [datetime/timestamp]
+
+class_management
+                id
+                user_id
+                classroom_no
+                timeslot_id
+                course_subject_id
+-------------------------------------------------------------------------
+account_details
+               id                                      [pk]
+               user_leave_id                                 [number] fk of user
+               account_type                            [varchar2(10)]
+               salary
+               user_leave_id
+
+user_leave
+          id
+          user_id
+          date
+
+stud_account_details
+              id                                       [pk]
+              user_id
+              fees(including discount on 3 subjects)
+              pending_fees
+              pay_type
+
+-------------------------------------------------------------------------
+address
+      id                                               [pk]
+      addressable_id(student_id,teaching_staff_id,non_teaching_staff_id)
+      addressable_type                                 [varchar2(10)]
+      address1                                         [varchar2(10)]
+      address2                                         [varchar2(10)]
+      city_id                                          [number] fk of city
+      state_id                                         [number] fk of state
+      country_id                                       [number] fk country
+
+city
+    id                                                 [pk]
+    city_name                                          [varchar2(10)]
+
+
+state
+     id
+     state_name                                        [varchar2(10)]
+
+
+country
+       id
+       country_name                                    [varchar2(10)]
+------------------------------------------------------------------------
+
+user_attendance
+                      id
+                      user_id                          [number] fk to user
+                      present                          [number]
+                      Defaulter_status                 [varchar2(10)]
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+relationship
+
+-----------------------------------------------
+subject to courses  many to many relationship
+
+polymorphic relation between address and user
+
+class management to timeslot,course_subject,batches one to many relationship
+
+
